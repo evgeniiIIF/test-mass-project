@@ -1,0 +1,43 @@
+Изменить remote.origin.url для git repository
+
+Запустите git remote для просмотра списка существующих удаленных серверов и просмотра их имен и URL-адресов:
+git remote -v
+ 
+Вывод будет выглядеть примерно так:
+
+origin	https://github.com/user/repo_name.git (fetch)
+origin	https://github.com/user/repo_name.git (push)
+ 
+Изменить URL из origin к https://github.com/user/repo_name-NEW.git
+
+git remote set-url origin git@gitserver.com:user/repo_name.git
+
+============================================
+
+Связать удаленную ветку (remote) с локальной (branch)
+
+git push -u <remote> <branch> - "git push -u origin main"
+git branch -vv
+============================================
+
+Отменить мердж
+
+git merge --abort
+============================================
+
+Отменить последний коммит
+
+git reset HEAD^
+git checkout .
+============================================
+
+Слить три последних коммита в один
+
+git rebase -i HEAD~3
+
+pick commit__1
+squash commit__2
+squash commit__3
+
+git push -f 
+============================================

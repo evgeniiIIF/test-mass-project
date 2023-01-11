@@ -1,0 +1,561 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Document
+	body 
+		include ../colors-and-type/colors-and-type.pug
+		//- form-elements
+		include ../elements/elements-page/elements-page.pug
+		//- cards
+		include ../cards/cards-page/cards-page.pug
+
+
+
+		include ../head/head.pug
+		.form-elements
+			.form-elements__column
+				+field({
+					label: 'text field',
+					type: 'email',
+					name: 'text-field',
+					placeholder: 'Email',
+					tabindex: 1,
+					required: true,
+				})
+
+				+item-quantity-dropdown({
+					js: true,
+					readonly: true,
+					id: 'guests', 
+					dropdownId: 'drop1',
+					label: 'dropdown', 
+					type,
+					arrowSvg: {
+						name: 'expand-more', 
+						fill: '#1F2041',
+						opacity: '0.5'
+					},
+					placeholder: 'Сколько гостей', 
+					buttons: true, 
+					arrowSvg: {
+						name: 'expand-more', 
+						fill: '#1F2041',
+						opacity: '0.5'
+					},
+					items: [
+						{ text:'взрослые', id: 'item1', itemCount: 2 },
+						{ text:'дети', id: 'item2', itemCount: 0 },
+						{ text:'младенцы', id: 'item3', itemCount: 1 },
+					],
+					tabindex: 1
+				})
+				+item-quantity-dropdown({
+					js: true,
+					readonly: true,
+					id: 'facilities', 
+					dropdownId: 'drop2',
+					label: 'dropdown', 
+					type:'text',
+					arrowSvg: {
+						name: 'expand-more', 
+						fill: '#1F2041',
+						opacity: '0.5'
+					},
+					placeholder: 'Удобства', 
+					buttons: false, 
+					items: [
+						{ text:'спальни', id: 'item1', itemCount: 2 },
+						{ text:'кровати', id: 'item2', itemCount: 2 },
+						{ text:'ванные комнаты', id: 'item3', itemCount: 0 },
+					],
+					tabindex: 1
+				})
+				+masked-text-field({
+					label: 'masked text field',
+					type: 'text',
+					name: 'masked-text-field',
+					placeholder: 'ДД.ММ.ГГ',
+					tabindex: 1,
+					required: true,
+				})
+				+air-datepicker-calendar({
+					drop1:{
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop1',
+						label: 'date dropdown', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+					drop2: {
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop2',
+						label: 'date dropdown', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					}
+				})
+				+air-datepicker-calendar({
+					drop1:{
+						js: false,
+						readonly: true,
+						dropdownId: 'drop3',
+						label: 'date dropdown', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+				})
+				+subscription-text-field({
+					js: false, 
+					readonly: false,
+					dropdownId: false,
+					label: 'subscription text field', 
+					type: 'email', 
+					placeholder: 'Email', 
+					tabindex: 1,
+					arrowSvg: {
+						name: 'arrow-forward', 
+						fill: "#BC9CFF",
+						opacity: null,
+					}
+				})
+				+expandable-checkbox-list({
+					title: 'expandable checkbox list',
+					items:[
+						{text:'Завтрак', isChecked: false},
+						{text:'Письменный стол', isChecked: true},
+						{text:'Стул для кормления', isChecked: true},
+						{text:'Кроватка', isChecked: true},
+						{text:'Телевизор', isChecked: false},
+						{text:'Шампунь', isChecked: false},
+					],
+					arrowSvg: {
+						name: 'expand-more', 
+						fill: '#1F2041',
+						opacity: '0.5'
+					}
+				})
+				+item-info-row({
+					title: 'Комфорт', 
+					text: 'Шумопоглощающие стены', 
+					imgPath: require('../../assets/img/item-info-row/insert_emoticon.svg')
+				})
+				+item-info-row({
+					title: 'Удобство', 
+					text: 'Окно в каждой из спален', 
+					imgPath: require('../../assets/img/item-info-row/location_city.svg')
+				})
+
+			.form-elements__column
+				+checkbox-buttons({
+					title: 'Checkbox Buttons',
+					items:[
+						{text:'Можно курить', isChecked: false},
+						{text:'Можно с питомцами', isChecked: true},
+						{text:'Можно пригласить гостей (до 10 человек)', isChecked: true},
+					],
+				})
+				+radio-buttons({
+					title: 'Radio Buttons',
+					radio__1: 'Мужчина', 
+					radio__2: 'Женщина', 
+					name: 'radio'
+				})
+				+toggle-buttons({
+					title: 'Toggle', 
+					text: 'Получать спецпредложения'
+				})
+				+like-button({
+					likeTitle: 'like button',
+					val: 5
+				})
+				+rate-button({
+					title: 'rate button',
+					star: 4,
+					starBorder:1
+				})
+				+rich-checkbox-buttons({
+					title: 'rich checkbox buttons',
+					items: [
+						{text: 'Широкий коридор', subtext: 'Ширина коридоров в номере не менее 91 см.'},
+						{text: 'Помощник для инвалидов', subtext: 'На 1 этаже вас встретит специалист  и проводит до номера.'},
+					]
+				})
+				+item-comment({
+					title: 'Мурад Сарафанов', 
+					text: '5 дней назад', 
+					imgPath: require('../../assets/img/item-comment/image33.jpg'),
+					val: 5,
+					commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+				})
+			.form-elements__column
+				+range-slider({
+					title: "range"
+				})
+				+button-color({
+					text: 'color',
+				})
+				+button-border-gradient({
+					text: 'color',
+				})
+				+button-arrow({
+					text: 'color',
+				})
+				+pagination({
+					title: 'pagination'
+				})
+				+bullet-list({
+						title: 'bullet list',
+						items: [
+							{text: 'Нельзя с питомцами'},
+							{text: 'Без вечеринок и мероприятий'},
+							{text: 'Время прибытия — после 13:00, а выезд до 12:00'},
+						]
+				})
+				+canvas-circle({})
+		include ../head/head.pug
+		.form-elements
+			.form-elements__column
+				+find-room({
+					title: 'Найдём номера под ваши пожелания',
+					drop1:{
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop1',
+						label: 'прибытие', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+					drop2: {
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop2',
+						label: 'выезд', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+					iqDropdown:{
+						js: true,
+						readonly: true,
+						id: 'guests', 
+						dropdownId: 'drop3',
+						label: 'гости', 
+						type: 'text',
+						placeholder: 'Сколько гостей', 
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						},
+						buttons: true, 
+						items: [
+							{ text:'взрослые', id: 'item1', itemCount: 0 },
+							{ text:'дети', id: 'item2', itemCount: 0 },
+							{ text:'младенцы', id: 'item3', itemCount: 0 },
+						],
+						tabindex: 1
+					},
+					buttonArrow:{
+						text: 'подобрать номер',
+					},
+				})
+				+account-registration({
+					title: 'Регистрация аккаунта',
+					fieldName: {
+						label: false,
+						type: 'text',
+						name: 'name',
+						placeholder: 'Имя',
+						tabindex: 1,
+						required: true,
+					},
+					fieldSurname: {
+						label: false,
+						type: 'text',
+						name: 'surname',
+						placeholder: 'Фамилия',
+						tabindex: 1,
+						required: true,
+					},
+					radioButtons: {
+						title: false,
+						radio__1: 'Мужчина', 
+						radio__2: 'Женщина', 
+						name: 'radio'
+					},
+					maskedTextField: {
+						label: 'дата рождения',
+						type: 'text',
+						name: 'birthday',
+						placeholder: 'ДД.ММ.ГГГГ',
+						tabindex: 1,
+						required: true,
+					},
+					fieldEmail: {
+						label: 'данные для входа в сервис',
+						type: 'email',
+						name: 'email',
+						placeholder: 'Email',
+						tabindex: 1,
+						required: true,
+					},
+					fieldPassword: {
+						label: false,
+						type: 'password',
+						name: 'password',
+						placeholder: 'Пароль',
+						tabindex: 1,
+						required: true,
+					},
+					toggleButton: {
+						title: false, 
+						text: 'Получать спецпредложения'
+					},
+					buttonArrow: {
+						text: 'перейти к оплате',
+					},
+					accountActionsText: 'Уже есть аккаунт на Toxin',
+					buttonBorder: {
+						text: 'войти',
+					}
+				})
+			.form-elements__column
+				+room-reservation({
+					number: '888',
+					characteristic: 'ЛЮКС',
+					worth: '9 990',
+					drop1:{
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop1',
+						label: 'прибытие', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+					drop2: {
+						js: false, 
+						readonly: true,
+						dropdownId: 'drop2',
+						label: 'выезд', 
+						type: 'text', 
+						placeholder: 'ДД.ММ.ГГГГ', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						}
+					},
+					iqDropdown:{
+						js: true,
+						readonly: true,
+						id: 'guests', 
+						dropdownId: 'drop3',
+						label: 'гости', 
+						type: 'text',
+						placeholder: 'Сколько гостей', 
+						arrowSvg: {
+							name: 'expand-more', 
+							fill: '#1F2041',
+							opacity: '0.5'
+						},
+						buttons: true, 
+						items: [
+							{ text:'взрослые', id: 'item1', itemCount: 0 },
+							{ text:'дети', id: 'item2', itemCount: 0 },
+							{ text:'младенцы', id: 'item3', itemCount: 0 },
+						],
+						tabindex: 1
+					},
+					buttonArrow: {
+						text: 'забронировать',
+					},
+				})
+				+signing-in({
+					title: 'Войти',
+					fieldName: {
+						label: false,
+						type: 'text',
+						name: 'name',
+						placeholder: 'Имя',
+						tabindex: 1,
+						required: true,
+					},
+					fieldSurname: {
+						label: false,
+						type: 'text',
+						name: 'surname',
+						placeholder: 'Фамилия',
+						tabindex: 1,
+						required: true,
+					},
+					buttonArrow: {
+						text: 'Войти',
+					},
+					accountActionsText: 'Нет аккаунта на Toxin?',
+					buttonBorder: {
+						text: 'создать',
+					}
+				})
+			.form-elements__column
+				+room-card({
+					images: [
+						require('../../assets/img/room-card/room-888/imageroom-image-888.jpg'),
+						require('../../assets/img/room-card/room-888/imageroom-image-888-2.jpg'),
+						require('../../assets/img/room-card/room-888/imageroom-image-888-3.jpg'),
+						require('../../assets/img/room-card/room-888/imageroom-image-888-4.jpg'),
+					],
+					number: '888',
+					characteristic: 'ЛЮКС',
+					worth: '9 990',
+					rateButton: {
+						title: false,
+						star: 5,
+						starBorder:0
+					},
+					reviewsCount:'145'
+				})
+				+room-card({
+					images: [
+						require('../../assets/img/room-card/room-840/20.jpg'),
+						require('../../assets/img/room-card/room-840/23.jpg'),
+						require('../../assets/img/room-card/room-840/29.jpg'),
+					],
+					number: '840',
+					characteristic: false,
+					worth: '9 990',
+					rateButton: {
+						title: false,
+						star: 4,
+						starBorder:1
+					},
+					reviewsCount:'65'
+				})
+		include ../head/head.pug
+		.page-blocks
+			+header({
+				logo:{
+					href: 'https://changeme',
+					logoIcon: require("../../assets/img/icons/favicon.png"),
+					logoText: require("../../assets/img/icons/TOXIN.png"),
+				},
+				menuItems: [
+					{text: 'О нас', href: "нас", submenuItems: false},
+					{text: 'Услуги', href: "Услуги", submenuItems: [
+						{text: 'Услуга 1', href: "1", submenuItems: false},
+						{text: 'Услуга 2', href: "2", submenuItems: false},
+						{text: 'Услуга 3', href: "3", submenuItems: false},
+					]},
+					{text: 'Вакансии', href: "Вакансии", submenuItems: false},
+					{text: 'Новости', href: "Новости", submenuItems: false},
+					{text: 'Соглашения', href: "Соглашения", submenuItems: false},
+				],
+				buttonSingIn:{
+					text: 'Войти'
+				},
+				buttonSingUp:{
+					text: 'зарегистрироваться'
+				}
+			})
+			+footer({
+				logo:{
+					href: 'https://changeme',
+					logoIcon: require("../../assets/img/icons/favicon.png"),
+					logoText: require("../../assets/img/icons/TOXIN.png"),
+				},
+				blockLogoText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+				navItems:[
+					{
+						title: "навигация", 
+						links: [
+							{href: 'http://chagneme', text: 'О нас'},
+							{href: 'http://chagneme', text: 'Новости'},
+							{href: 'http://chagneme', text: 'Служба поддержки'},
+							{href: 'http://chagneme', text: 'Услуги'},
+						]
+					},
+					{
+						title: "о нас", 
+						links: [
+							{href: 'http://chagneme', text: 'О сервисе'},
+							{href: 'http://chagneme', text: 'Наша команда'},
+							{href: 'http://chagneme', text: 'Вакансии'},
+							{href: 'http://chagneme', text: 'Инвесторы'},
+						]
+					},
+					{
+						title: "Служба поддержки", 
+						links: [
+							{href: 'http://chagneme', text: 'Соглашения'},
+							{href: 'http://chagneme', text: 'Сообщества'},
+							{href: 'http://chagneme', text: 'Связь с нами'},
+						]
+					}
+				],
+				subscribe: {
+					title: 'Подписка',
+					text: 'Получайте специальные предложения и новости сервиса',
+					field: {
+						js: false, 
+						dropdownId: false,
+						label: false, 
+						type: 'email', 
+						placeholder: 'Email', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'arrow-forward', 
+							fill: "#BC9CFF",
+							opacity: null,
+						}
+					}
+				},
+				copy:{
+					text: 'Copyright © 2018 Toxin отель. Все права защищены.',
+					icons:[
+						{src: require('../../assets/img/social/facebook.svg'), alt: 'facebook'},
+						{src: require('../../assets/img/social/instagramm.svg'), alt: 'instagramm'},
+						{src: require('../../assets/img/social/twiter.svg'), alt: 'twiter'},
+					]
+				}
+			})
+		script(src="./assets/js/uikit-page.js") 

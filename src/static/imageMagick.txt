@@ -1,0 +1,7 @@
+//For compress all jpg images
+jpegoptim -m50 *.jpg
+
+//For compress all png images
+pngquant --quality=60-80 *.png --ext '-opt'
+rm -r *.png
+rename 's/-opt/.png/' *-opt

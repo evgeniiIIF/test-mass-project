@@ -1,0 +1,48 @@
+.field {
+  &__label {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      margin-bottom: 5px;
+      @extend %type-label;
+    }
+  }
+
+  &__input {
+    width: 0;
+    min-width: 100%;
+    padding: 13px 15px 16px 15px;
+    border: 1px solid $dark-25;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @extend %type-field;
+
+    &::placeholder {
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $dark-50;
+      color: $dark-75;
+      &::placeholder {
+        color: $dark-75;
+      }
+      & + .dropdown__arrow {
+        & svg path {
+          fill: $dark-75;
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+}
+// mixin field(opts)
+//   .field
+//     if(opts.label)
+//       label.field__label= (opts.label)
+//         input.field__input(type=(opts.type) placeholder=(opts.placeholder) required=(opts.required))
+//     else
+//       input.field__input(type=(opts.type) placeholder=(opts.placeholder) required=(opts.required))

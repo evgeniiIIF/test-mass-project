@@ -1,0 +1,61 @@
+@import "../find-room/find-room.scss";
+@import "../account-registration/account-registration.scss";
+@import "../room-reservation/room-reservation.scss";
+@import "../signing-in/signing-in.scss";
+@import "../room-card/room-card.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+// @import "../find-room/find-room.scss";
+
+// .card {
+//   padding: 40px 30px 30px;
+//   background: #ffffff;
+//   border: 1px solid rgba(0, 0, 0, 0.12);
+//   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+//   border-radius: 4px;
+//   @include mb(20px);
+
+//   &__group {
+//     @include mb(10px);
+//   }
+//   &__space-between {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+//   &__account-actions-text {
+//     margin-right: 20px;
+//     color: #000;
+//   }
+// }
+
+.room-info {
+  &__number {
+    &-numbers {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: $dark-100;
+    }
+    &-characteristic {
+      color: $primary-color;
+    }
+  }
+  &__price {
+    color: $dark-50;
+    &-worth {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 129%;
+    }
+    &-text {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

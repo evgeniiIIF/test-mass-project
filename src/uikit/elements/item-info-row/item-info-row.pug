@@ -1,0 +1,12 @@
+mixin item-info-row(opts)
+  .item-info-row
+    img.item-info-row__image(src=opts.imgPath, alt="smail")
+    .item-info-row__content
+      .item-info-row__title= (opts.title)
+      .item-info-row__text.type-body= (opts.text)
+
+//- +item-info-row({
+//-   title: 'Комфорт', 
+//-   text: 'Шумопоглощающие стены', 
+//-   imgPath: require('../.../../assets/img/item-info-row/insert_emoticon.svg')
+//- })

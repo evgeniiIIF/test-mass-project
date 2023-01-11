@@ -1,0 +1,60 @@
+include ../../uikit/elements/elements-page/elements-page.pug
+
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Test
+	body
+		.wrapper
+			.block
+				.block__bg-image.ibg
+					img(src=require("../../assets/img/ob.jpg"), alt="image")
+				.block__mask-image.ibg
+					img.ibg__mask(src=require("../../assets/img/maskob.png"), alt="image")
+				.container.block__container
+					.block__body
+						.block__menu-left.left-menu
+							.left-menu__burger
+								+burger()
+							nav.left-menu__nav
+								ul.left-menu__list
+									li.left-menu__item
+										a(href="changeme").left-menu__link <span>01</span>Something
+										.left-menu__item-border
+									li.left-menu__item
+										a(href="changeme").left-menu__link <span>02</span>Something
+										.left-menu__item-border
+									li.left-menu__item.left-menu__item--active
+										a(href="changeme").left-menu__link <span>03</span> Подсказки
+										.left-menu__item-border
+									li.left-menu__item
+										a(href="changeme").left-menu__link <span>04</span>Something
+										.left-menu__item-border
+							.left-menu__scroll
+								.scroll-notice
+									.scroll-notice__text Скрольте вниз
+									.scroll-notice__image
+										img(src=require("../../assets/img/icons/Arrow.svg"), alt="")
+						.block__menu-center.center-menu
+							.center-menu__body
+								.center-menu__logo
+									.center-menu__text КиноПоиск
+									img.center-menu__icon(src=require("../../assets/img/logo/logo.png"), alt="logo")
+								p.center-menu__content ОНИ ДОЛЖНЫ ЧТО-ТО ЗНАТЬ
+							.center-menu__slider
+								+images-slider([
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+									require('../../assets/img/racer.png'),
+								])
+						.block__menu-right.right-menu
+							a.right-menu__link(href="") hd.kinopoisk.ru

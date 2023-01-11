@@ -1,0 +1,32 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  th,
+  td {
+    @extend %type-h6;
+  }
+
+  &__border-spacing {
+    height: 20px;
+  }
+  &__thead {
+    background: #043c77;
+  }
+  &__th {
+    padding: 20px;
+    margin-bottom: 50px;
+    color: #fff;
+    text-align: left;
+    @extend %type-h6;
+  }
+  &__rth {
+    @extend %type-body-th;
+    background: #098fcf;
+  }
+  &__td {
+    vertical-align: top;
+    padding: 16px 20px;
+    border: 1px solid #e7e7e7;
+  }
+}

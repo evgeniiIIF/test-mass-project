@@ -1,0 +1,103 @@
+//- mixin submenu-list(opts)
+
+mixin list-items(opts)
+  each item in opts
+    if(item.submenuItems)
+      li.menu__item.item-menu.item-menu--has-submenu.js-button.js-target
+        .item-menu__body
+          .item-menu__link= item.text
+          .item-menu__arrow
+            +svg({
+              id:'#expand-more',
+              width: 13,
+              height: 8,
+            })
+        ul.item-menu__submenu.submenu.js-openable-element
+          each itemSubmenu in item.submenuItems
+            if(itemSubmenu.submenuItems)
+              li.submenu__item.item-menu.item-menu--has-submenu.js-button.js-target
+                .item-menu__body
+                  .item-menu__link= itemSubmenu.text
+                  .item-menu__arrow
+                    +svg({
+                      id:'#expand-more',
+                      width: 13,
+                      height: 8,
+                      })
+                ul.item-menu__submenu.submenu.js-openable-element
+                  each itemSubSubmenu in itemSubmenu.submenuItems
+                    li.submenu__item
+                      a.submenu__link(href=(itemSubmenu.href))= itemSubSubmenu.text
+            else
+              li.submenu__item
+                a.submenu__link(href=(itemSubmenu.href))= itemSubmenu.text
+    else
+      li.menu__item.item-menu
+        a.item-menu__link(href=(item.href))= item.text
+
+mixin header(opts)
+  header.header.js-header
+    .container
+      .header__body
+        .header__logo
+          +logo(opts)
+        .header__content.js-floating-block
+          .contacts-header
+            a.contacts-header__phone(href='tel:+74951278280')
+              +it({
+                class: 'contacts-header',
+                svg: {
+                  id: '#phone',
+                  width: 18,
+                  height: 18,
+                },
+                text: '8 (495) 127-82-80',
+              })
+            .contacts-header__buttons
+              +button-color({
+                text: 'Напишите нам',
+              })
+              +button-color({
+                it:{
+                  class: 'button-color',
+                  svg: {
+                    id: '#person',
+                    width: 14,
+                    height: 17,
+                  },
+                  text: 'Личный кабинет'
+                }
+              })
+        .header__menu.menu.js-menu.js-target.js-not-close
+          .menu__icon.js-menu__icon.js-button
+            +burger()
+          .menu__body.js-openable-element
+            nav.menu__nav
+              ul.menu__list
+                +list-items(opts.menuItems)
+
+
+//- +header({
+//-   logo: {
+//-     href: '#',
+//-     logoIcon: require("../.../../assets/img/icons/favicon.png"),
+//-     logoText: require("../.../../assets/img/icons/TOXIN.png"),
+//-   },
+//-   menuItems: [
+//-     {text: 'О нас', href: "нас", submenuItems: false},
+//-     {text: 'Услуги', href: "Услуги", submenuItems: [
+//-       {text: 'Усуга 1', href: "1", submenuItems: false},
+//-       {text: 'Усуга 2', href: "2", submenuItems: false},
+//-       {text: 'Усуга 3', href: "3", submenuItems: false},
+//-     ]},
+//-     {text: 'Вакансии', href: "Вакансии", submenuItems: false},
+//-     {text: 'Новости', href: "Новости", submenuItems: false},
+//-     {text: 'Соглашения', href: "Соглашения", submenuItems: false},
+//-   ],
+//-   buttonSingIn:{
+//-     text: 'Войти'
+//-   },
+//-   buttonSingUp:{
+//-     text: 'зарегистрироваться'
+//-   }
+//- })

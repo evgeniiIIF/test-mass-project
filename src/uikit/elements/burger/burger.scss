@@ -1,0 +1,41 @@
+.burger {
+  position: relative;
+  cursor: pointer;
+
+  &__body {
+    position: relative;
+    width: 20px;
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    span,
+    &::before,
+    &::after {
+      // position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      transition: all 0.1s ease 0s;
+      // background: $primary-color;
+      background: #fff;
+      border: 1px solid #000;
+    }
+    // span {
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    // }
+    // &::before {
+    //   top: 0;
+    // }
+    // &::after {
+    //   bottom: 0;
+    // }
+  }
+}

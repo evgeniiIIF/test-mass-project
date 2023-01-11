@@ -1,0 +1,165 @@
+@import "./smart-grid.scss";
+@import "./reset.scss";
+@import "./mixins.scss";
+@import "./fonts.scss";
+
+// ================colors=================
+
+$bg-color: #fff;
+$dark-100: rgba(31, 32, 65, 1);
+$dark-75: rgba(31, 32, 65, 0.75);
+$dark-50: rgba(31, 32, 65, 0.5);
+$dark-25: rgba(31, 32, 65, 0.25);
+$dark-5: rgba(31, 32, 65, 0.05);
+$primary-color: rgba(188, 156, 255, 1);
+$secondary-color: rgba(111, 207, 151, 1);
+
+// ================font=================
+
+$mainFontFamily: "GraphikKinopoiskLCApp", sans-serif;
+$mainFontColor: $dark-100;
+$mainFontSize: 10px;
+$maxFontSize: 14px;
+$mainFontWeight: 400;
+$mainLineHeight: 1.4;
+
+// ================z-index=================
+
+$z-iconMenu: 10;
+
+// ================UIkit=================
+// @import "../../uikit/elements/elements-page/elements-page.scss";
+// @import "../../uikit/colors-and-type/colors-and-type.scss";
+// @import "../../uikit/cards/cards-page/cards-page.scss";
+
+// ================Fonts=================
+%type-h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  color: #000000;
+}
+%type-h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+}
+%type-h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+%type-h4 {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+}
+%type-h5 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+%type-h6 {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+}
+%type-h7 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+%type-h8 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+%type-signature {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+%type-body {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #565656;
+}
+%type-body-th {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+}
+// ================FontsGroups=================
+%type-button {
+  @extend %type-h6;
+  color: #fff;
+}
+%type-label {
+  @extend %type-h5;
+  color: #000000;
+}
+%type-field {
+  @extend %type-signature;
+  color: #565656;
+}
+%type-checkbox {
+  @extend %type-signature;
+}
+%type-menu-link {
+  @extend %type-h4;
+}
+html {
+  font-size: $mainFontSize;
+  font-family: $mainFontFamily;
+  color: $mainFontColor;
+  background: $bg-color;
+}
+
+body {
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  // min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1 1 auto;
+  padding-top: 90px;
+  @include mb(100px);
+}
+
+.container {
+  @include container();
+  box-sizing: content-box;
+}
+
+.ibg {
+  position: relative;
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+._lock {
+  overflow: hidden;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+}

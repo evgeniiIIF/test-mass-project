@@ -1,0 +1,20 @@
+mixin rate-button(opts)
+  .rate-button
+    if(opts.title)
+      .rate-button__title.type-h3= (opts.title)
+    .rate-button__row
+      - let star = starBorder = 0;
+      while star < opts.star
+        .rate-button__star
+          img(src=require('../../assets/img/rate-button/star.svg'), alt="star")
+        - star += 1;
+      while starBorder < opts.starBorder
+        .rate-button__star-border
+          img(src=require("../../assets/img/rate-button/star_border.svg"), alt="star-border")
+        - starBorder += 1;
+
+//- +rate-button({
+//-   title: 'rate button',
+//-   star: 4,
+//-   starBorder:1
+//- })

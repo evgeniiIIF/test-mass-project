@@ -1,0 +1,63 @@
+mixin find-room(opts)
+  .find-room.card
+    .card__item
+      h3.find-room__title.card__title.type-h1= (opts.title)
+    .card__item
+      +air-datepicker-calendar(opts)
+    .card__item
+      +item-quantity-dropdown(opts.iqDropdown)
+    .card__item
+      +button-arrow(opts.buttonArrow)
+
+//- +find-room({
+//-   title: 'Найдём номера под ваши пожелания',
+//-   drop1:{
+//-     js: false, 
+//-     dropdownId: 'drop1',
+//-     label: 'прибытие', 
+//-     type: 'text', 
+//-     placeholder: 'ДД.ММ.ГГГГ', 
+//-     tabindex: 1,
+//-     arrowSvg: {
+//-       name: 'expand-more', 
+//-       fill: '#1F2041',
+//-       opacity: '0.5'
+//-     }
+//-   },
+//-   drop2: {
+//-     js: false, 
+//-     dropdownId: 'drop2',
+//-     label: 'выезд', 
+//-     type: 'text', 
+//-     placeholder: 'ДД.ММ.ГГГГ', 
+//-     tabindex: 1,
+//-     arrowSvg: {
+//-       name: 'expand-more', 
+//-       fill: '#1F2041',
+//-       opacity: '0.5'
+//-     }
+//-   },
+//-   iqDropdown:{
+//-     js: true,
+//-     id: 'guests', 
+//-     dropdownId: 'drop3',
+//-     label: 'гости', 
+//-     type: 'text',
+//-     placeholder: 'Сколько гостей', 
+//-     arrowSvg: {
+//-       name: 'expand-more', 
+//-       fill: '#1F2041',
+//-       opacity: '0.5'
+//-     },
+//-     buttons: true, 
+//-     items: [
+//-       { text:'взрослые', id: 'item1', itemCount: 0 },
+//-       { text:'дети', id: 'item2', itemCount: 0 },
+//-       { text:'младенцы', id: 'item3', itemCount: 0 },
+//-     ],
+//-     tabindex: 1
+//-   },
+//-   buttonArrow:{
+//-     text: 'подобрать номер',
+//-   },
+//- })

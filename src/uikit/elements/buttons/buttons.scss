@@ -1,0 +1,129 @@
+// %type-button {
+//   font-weight: 600;
+//   font-size: 13px;
+//   line-height: 16px;
+//   text-align: center;
+//   color: #ffffff;
+// }
+.button-color {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 14px;
+  cursor: pointer;
+  border: none;
+  background: #098fcf;
+  transition: all 100ms linear 0s;
+
+  &__text {
+    @extend %type-button;
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 13px;
+
+    svg {
+      fill: #fff;
+    }
+  }
+  &:hover {
+    background: darken($color: #098fcf, $amount: 5%);
+  }
+}
+
+.button-border-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2px;
+  border-radius: 22px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 7px 16px;
+    border-radius: 20px;
+    background: $bg-color;
+    color: $primary-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 100ms linear 0s;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.button-arrow {
+  // display: flex;
+  display: block;
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.1s ease 0s;
+
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   display: inline-block;
+  //   right: 15px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   width: 18px;
+  //   height: 18px;
+  //   background: url("../../assets/img/arrow/arrow_forward.svg") center no-repeat;
+  // }
+
+  &__text {
+    color: $bg-color;
+    text-align: center;
+  }
+  &__arrow {
+    position: absolute;
+    display: inline-block;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    path {
+      fill: #fff;
+    }
+  }
+}
+// mixin button-color(options)
+//   .button-color
+//     .button-color__text= options.text
+
+// mixin button-border(options)
+//   .button-border
+//     .button-border__text= options.text
+
+// mixin button-arrow(options)
+//   .button-arrow
+//     .button-arrow__text= options.text

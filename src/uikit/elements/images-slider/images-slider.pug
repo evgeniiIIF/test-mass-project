@@ -1,0 +1,26 @@
+mixin images-slider(opts)
+  .images-slider.js-images-slider
+    .images-slider__filter-none
+    .images-slider__line.js-images-slider__line
+      for imgPath in opts
+        .images-slider__slide.js-images-slider__slide.slide-slider
+          .slide-slider__image.ibg
+            img.ibg__main-image(src=imgPath, alt="image room")
+          .slide-slider__text Для примера мы показали вам его лицо.  В первой серии он прячется в подвале <br>за мониторами, и пусть борода не собьёт вас с толку. Найдите героя и нажмите  на паузу — ему не терпится отдать вам промокод.
+    .images-slider__control
+      .images-slider__control-previous.js-images-slider__control-previous
+        img(src=require('../../assets/img/arrow-prev.svg'), alt="arrow-prev")
+      .images-slider__pagination.pagination-slider.js-pagination-slider
+        span.pagination-slider__from 0/
+        span.pagination-slider__to 9
+      .images-slider__control-next.js-images-slider__control-next
+        img(src=require('../../assets/img/arrow-next.svg'), alt="arrow-next")
+      .images-slider__control-progress-none.js-images-slider__control-progress
+        .js-images-slider__control-progress-item.js-images-slider__control-progress-item--active
+
+//- +images-slider([
+//-   require('../.../../assets/img/room-card/room-888/imageroom-image-888.jpg'),
+//-   require('../.../../assets/img/room-card/room-888/imageroom-image-888-2.jpg'),
+//-   require('../.../../assets/img/room-card/room-888/imageroom-image-888-3.jpg'),
+//-   require('../.../../assets/img/room-card/room-888/imageroom-image-888-4.jpg'),
+//- ])

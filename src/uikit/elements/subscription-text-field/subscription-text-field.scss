@@ -1,0 +1,9 @@
+.subscription-text-field {
+  & .dropdown__input {
+    cursor: auto;
+  }
+  & .dropdown__arrow {
+    cursor: pointer;
+    z-index: 1;
+  }
+}

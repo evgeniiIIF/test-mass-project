@@ -1,0 +1,14 @@
+mixin it(opts)
+  span(class=`${opts.class}__icon`)
+    +svg(opts.svg)
+  span(class=`${opts.class}__text`)= (opts.text)
+
+//- +it({
+//-   class: 'contacts',
+//-   svg: {
+//-     id: '#person',
+//-     width: 14,
+//-     height: 17,
+//-   },
+//-   text: '8 (495) 127-82-80',
+//- })

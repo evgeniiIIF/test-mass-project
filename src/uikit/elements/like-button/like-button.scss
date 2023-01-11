@@ -1,0 +1,49 @@
+.like-button {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__body {
+    width: 40px;
+    border: 1px solid $dark-25;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__image {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    // background: url("../../assets/img/like-button/favorite_border.svg") center no-repeat;
+  }
+  &__value {
+    border: none;
+    width: 50%;
+    background: transparent;
+    padding: 4px 0 3px 0;
+    margin: 0 auto 0 2px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 110%;
+    cursor: pointer;
+
+    color: $dark-25;
+  }
+  &--liked {
+    &.like-button {
+      border-color: $primary-color;
+    }
+    & .like-button__image {
+      // background: url("../../assets/img/like-button/favorite.svg") center no-repeat;
+    }
+    & .like-button__value {
+      color: $primary-color;
+    }
+  }
+}
+
+// mixin like-button
+//   .like-button
+//     .like-button__image
+//     .like-button__value 2

@@ -1,0 +1,35 @@
+mixin room-card(opts)
+  .room-card.card
+    +images-slider(opts.images)
+    .room-card__body
+      .card__space-between.room-info
+        h3.room-info__number
+          span.room-info__number-numbers= ('№ ' + opts.number + ' ')
+          if(opts.characteristic)
+            span.room-info__number-characteristic.type-h3= (opts.characteristic)
+        .room-info__price
+          span.room-info__price-worth= (opts.worth + '₽ ')
+          span.room-info__price-text в сутки
+      .card__space-between
+        +rate-button(opts.rateButton)
+        .room-card__reviews
+          span.room-card__reviews-count= (opts.reviewsCount + ' ')
+          span.room-card__reviews-text Отзывов
+
+//- +room-card({
+//-   images: [
+//-     require('../.../../assets/img/room-card/room-888/imageroom-image-888.jpg'),
+//-     require('../.../../assets/img/room-card/room-888/imageroom-image-888-2.jpg'),
+//-     require('../.../../assets/img/room-card/room-888/imageroom-image-888-3.jpg'),
+//-     require('../.../../assets/img/room-card/room-888/imageroom-image-888-4.jpg'),
+//-   ],
+//-   number: '888',
+//-   characteristic: 'ЛЮКС',
+//-   worth: '9 990',
+//-   rateButton: {
+//-     title: false,
+//-     star: 5,
+//-     starBorder:0
+//-   },
+//-   reviewsCount:'145'
+//- })

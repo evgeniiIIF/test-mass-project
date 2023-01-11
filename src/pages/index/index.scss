@@ -1,0 +1,250 @@
+@import "../../sys/scss/settings.scss";
+@import "../../uikit/elements/elements-page/elements-page.scss";
+@import "../../uikit/tables/tables-page/tables-page.scss";
+
+//  ========= Modules ==========
+.wrapper {
+  @media (max-height: 500px) {
+    height: auto;
+    min-height: 100%;
+  }
+}
+.block {
+  height: 100%;
+  position: relative;
+
+  &__bg-image {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__mask-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__container {
+    height: 100%;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__menu-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 37px;
+  }
+
+  &__menu-center {
+  }
+
+  &__menu-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+.container {
+}
+.left-menu {
+  &__burger {
+  }
+
+  &__nav {
+    margin: 30px 0 45px 0;
+  }
+
+  &__list {
+    @include mb(24px);
+  }
+
+  &__item {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    &:hover {
+      & .left-menu__link {
+        opacity: 1;
+      }
+      & .left-menu__item-border {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item-border {
+    width: 8px;
+    height: 2px;
+    background: #000;
+    transition: inherit;
+  }
+
+  &__link {
+    font-weight: regular;
+    font-size: 14px;
+    line-height: 187%;
+
+    span {
+      margin-right: 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 94%;
+    }
+    color: #333333;
+    transition: inherit;
+    opacity: 0;
+  }
+
+  &__item--active {
+    & .left-menu__link {
+      opacity: 1;
+    }
+    & .left-menu__item-border {
+      width: 100%;
+    }
+  }
+
+  &__scroll {
+    display: flex;
+    padding-bottom: 20px;
+  }
+}
+.burger {
+  &__body {
+  }
+}
+.scroll-notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  &__image {
+  }
+
+  &__text {
+    width: 20px;
+    margin-bottom: 20px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 107%;
+    text-align: center;
+    color: #333333;
+  }
+}
+.center-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin: 21px 0;
+  }
+
+  &__text {
+    margin-right: 3px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  &__icon {
+  }
+
+  &__content {
+    @include adaptiv-font(45, 20);
+    font-family: Futura;
+    font-weight: 700;
+    // font-size: 45px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.692308px;
+    text-transform: uppercase;
+    color: #ffcc64;
+  }
+  &__slider {
+    width: 72%;
+
+    .images-slider__slide {
+      // padding-top: 80px;
+    }
+    .images-slider__line {
+      // position: relative;
+      // background: url("../../assets/img/maskob.png") no-repeat;
+    }
+    .sliBG {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+    .slide-slider__image {
+      width: 20%;
+      padding-top: 30%;
+      margin-top: 89px;
+      margin-bottom: -109px;
+    }
+    .slide-slider__text {
+      position: relative;
+      z-index: 3;
+      @include adaptiv-font(20, 14);
+      line-height: 160%;
+      text-align: center;
+      letter-spacing: 0.4px;
+      color: #000000;
+    }
+    .image-slider__bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: red;
+    }
+  }
+}
+.logo-header {
+  &__icon {
+  }
+}
+.right-menu {
+  &__link {
+    writing-mode: vertical-rl;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 107%;
+    text-align: center;
+    color: #333333;
+  }
+}

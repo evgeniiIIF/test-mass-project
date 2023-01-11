@@ -1,0 +1,375 @@
+____________________________________Методы массивов_____________________________________
+
+------arr.filter()--------Фильтрация по диапазону
+
+let array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+function rangeArr(arr, a,b) {
+  return arr.filter( item => (item >= a && item <= b) );
+}
+let obj = {
+  name: 'Jon',
+  surname: 'Smith',
+  age: 22
+};
+
+let obj2 = Object.fromEntries(Object.values(obj).map((item, index) => [index, item]) )
+console.log(obj2)
+let a = rangeArr(array, 4,8)
+
+console.log(a) // [4, 5, 6, 7, 8]
+
+------arr.filter()--------Фильтрация по диапазону на месте
+
+let array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+function rangeArr(arr, a,b) {
+  for ( let i = 0; i < arr.length; i++ ) {
+    let vel = arr[i];
+    
+    if ( vel < a || vel > b ) {
+      arr.splice( i, 1 );
+      i--;
+    }
+  }
+}
+
+rangeArr(array, 4, 9);
+
+console.log(array) // [4, 5, 6, 7, 8, 9]
+
+------arr.map()--------Вид строки
+
+let str = "background-color";
+
+function camelize(str) {
+  return str
+    .split('-')
+    .map( (item, index) => (index == 0) ? item: item[0].toUpperCase() + item.slice(1)  )
+    .join("")
+  
+}
+
+let a = camelize(str);
+
+console.log(a);
+
+------arr.sort()--------Сортировка массива по убыванию
+
+let arr = [5, 2, 1, -10, 8];
+
+function sortArr(arr) {
+  arr
+    .sort( (a, b) => a - b )
+    .reverse()
+}
+
+sortArr(arr)
+console.log(arr)
+
+_______Создать расширяемый калькулятор__________
+
+str = "1 + 4";
+
+let calc = {
+  methods: {
+    "+":(a, b) => a + b,
+    "-":(a, b) => a - b,
+  },
+  
+  calculate: function(str) {
+    str = str.split(" ");
+    a = str[0];
+    op = str[1];
+    b = str[2];
+    
+    if( !isFinite(a) || !this.methods[op] || !isFinite(b) ) {
+      return "NO";
+    }
+    
+    return this.methods[op](+a, +b);
+  },
+  
+  addMethod: function(oper, func) {
+    this.methods[oper] = func;
+    console.log(this.methods)
+  }
+  
+  
+}
+
+calc.addMethod("*", (a, b) => a * b);
+
+console.log(calc.calculate(prompt("virag", "viregenie")))
+
+___________________Перебираемые обьекты_______________
+
+et range = {
+  from: 1,
+  to: 5,
+  [Symbol.iterator]: function(){
+    return  {
+      current: this.from,
+      last: this.to,
+      
+      next() {
+        if (this.current <= this.last) {
+          return {done: false, value: this.current++};
+        }else {
+          return {done: true};
+        }
+      }
+    }
+  }
+};
+
+// for(key of range) {
+//   console.log(key);
+// }
+
+
+let a = range[Symbol.iterator]();
+
+console.log(a.next());
+console.log(a.next());
+console.log(a.next());
+console.log(a.next());
+console.log(a.next());
+console.log(a.next());
+console.log(a.next());
+____________________________Числа фебоначи___________________________
+function feb(n) {
+  let a = 0, b = 1, arr;
+  n > 0 ? arr = [a,b]: arr = [a];
+  for (let i = 2; i <= n; i++ ) {
+    [a,b] = [b, a + b];
+    arr.push(b);
+  }
+  return arr
+}
+
+console.log(feb(1))
+
+__________________Из обьекта в псевдомассив___________________
+let obj = {
+  name: 'Jon',
+  surname: 'Smith',
+  age: 22
+};
+
+let obj2 = Object.fromEntries(Object.values(obj).map((item, index) => [index, item]) )
+obj.length = Object.keys(obj).length
+console.log(obj2)
+
+_____________[Symbol.species]__________свойство! вызов без()в концу [Symbol.species]_________
+class Bakery {
+  constructor() {
+    this.name = "anomimus bakery";
+    this.packed = false;
+  }
+  byEat() {console.log("You can eat")};
+  static get [Symbol.species](){return Pie}
+}
+
+class Pie extends Bakery {
+  constructor(){
+    super();
+    this.name = 'pie'
+  }
+}
+
+class PackedBakery extends Bakery {
+  constructor(){
+    super();
+    let derivedClass = Bakery[Symbol.species];
+    let product = new derivedClass();
+    product.packed = true;
+    return product
+  }
+}
+
+let PacBac = new PackedBakery();
+console.log(PacBac)
+__________________________Расширение встроенных классов___________
+class Test extends Object {
+  constructor(options){
+    super()
+    this.name = options.name;
+    this.surname = options.surname;
+  }
+  
+  print(){                        \\добавляем новый метод для обьектов нетрогая глобальный прототип//
+    console.log(this)
+  }
+}
+
+let test = new Test({name:"jon", surname: 'smit'});
+test.print()
+
+________________________Примеси_______________________________________
+let obj = {
+  on(eventName, handler) {
+    if(!this._eventHandlers) this._eventHandlers = {};
+    if(!this._eventHandlers[eventName]) this._eventHandlers[eventName] = [];
+    this._eventHandlers[eventName].push(handler);
+  },
+  off(eventName, handler) {
+    let handlers = this._eventHandlers && this._eventHandlers[eventName];
+    if(!handlers) return;
+    for (let i = 0; i < handlers.length; i++){
+      console.log(i)
+      if(handlers[i].name == handler) {handlers.splice(i, 1);console.log(i)};
+    }
+  },
+  triger(eventName, ...args) {
+    if(!this._eventHandlers || !this._eventHandlers[eventName]) return;
+    this._eventHandlers[eventName].forEach(item => item.apply(this, args))
+  }
+}
+obj.on("sayHi", function one(name) {console.log("hello one " + name )});
+obj.on("sayHi", two = function() {console.log("hello two")})
+obj.on("sayHi", sex = () => {console.log("hello sex")})
+
+class Test {
+  print(...args) {
+    this.triger.apply(this, args)
+  }
+}
+Object.assign(Test.prototype, obj);
+let test = new Test();
+test.print('sayHi', 'jon')
+_______________________Всплывающий круг___________________________
+let button = document.getElementById("button"); showCircle = showCircle();
+button.addEventListener("click", () => go());
+function showCircle() {
+  let c = 0;
+  return function(radius) {
+    c += 100
+    let div = document.createElement("div");
+    div.style.width = '10px';
+    div.style.height = '10px';
+    div.style.left = c + 'px';
+    div.style.top = 150 + 'px';
+    div.className = "circle";
+    document.body.append(div);
+    return new Promise( resolve => {
+      setTimeout(() => {
+        div.style.width = radius * 2 + 'px';
+        div.style.height = radius * 2 + 'px';
+        div.addEventListener("transitionend", function han(){
+          div.removeEventListener('transitionend', han);
+          resolve(div)
+        })
+      }, 10)
+    })
+  }
+}
+function go(){
+  showCircle(100)
+    .then(div => {div.classList.add('message-ball');
+                  div.append("Hello world"); return div})
+    .then(div => {div.classList.add('message-ball');div.append(" Hell")})
+------круг замыкание iffi---------
+new Promise(resolve => {
+  let div = document.createElement('div');
+  div.className = "circle";
+  document.body.append(div);
+  resolve(div);
+})
+.then(function f(div) {
+    let i = 0
+    div.append(i)
+  
+return (function ff(){  return new Promise(resolve => {
+    let arr = ['blue', 'yellow', 'black'];
+    if(i >= arr.length) i = 0;
+    setTimeout(() => {
+      div.style.backgroundColor = arr[i];
+      resolve(div);
+      i += 1;
+      ff(div)
+      console.log(i)
+    }, 1000)
+  })})()
+})
+  
+----------------сумма с произвольным колличеством скобок------------тема Объект функции, NFE----
+function func(a) {
+
+  let currentSum = a;
+
+  function f(b) {
+    currentSum += b;
+    return f;
+  }
+
+  f.toString = function() {
+    return currentSum.toString();
+  };
+
+  return f;
+}
+
+console.log(func(1)(2)(3))
+
+---------------Каррирование--------------------
+function sum(a , b, c) {
+ return a + b + c
+}
+
+function curry(func) {
+  return function curried(...args) {
+    if(args.length >= func.length) {
+      return func.apply(this, args);
+    }else {
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2))
+      }
+    }
+  }
+}
+
+let sumNew = curry(sum)
+
+console.log(sumNew(2)(3)(3))
+console.log(sumNew(2,3)(3))
+console.log(sumNew(2,3,3))
+---
+function sum(a,b,c) {
+  console.log(a + b + c)
+}
+
+function carrSum(func){
+  return function f(...args) {
+    if(args.length < func.length) {
+      console.log("if", args)
+      return f.bind(null, ...args)
+    }else {
+      console.log("else")
+      func.apply(this, args)
+    }
+  }
+}
+
+let carr = carrSum(sum);
+carr(1)(2)(3)
+
+---------------------random min max-------------------
+
+function getRandomNum(min, max){
+  let random = min + Math.floor(Math.random() * (max - min + 1) )
+  return random
+  }
+
+let i =0;
+let obj = {}
+
+while(i < 99) {
+  i++
+  currentNum = getRandomNum(2,4);
+  obj[currentNum] = obj[currentNum] ? (obj[currentNum] += 1) : 1;
+}
+
+console.log(obj)
+
+

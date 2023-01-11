@@ -1,0 +1,11 @@
+mixin title-text(opts)
+  .title-text
+    if(opts.title)
+      h6.title-text__title= opts.title
+    if(opts.text)
+      p.title-text__text= opts.text
+
+//- +title-text({
+//-   title: 'Цена за литр:',
+//-   text: 'Цена и стоимость указаны ориентировочно. Точные цену и стоимость собщит наш менеджер при подтверждении заявки.'
+//- })

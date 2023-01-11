@@ -1,0 +1,16 @@
+mixin item-comment(opts)
+  .item-comment
+    .item-comment__person
+      +item-info-row(opts)
+    .item-comment__content
+      .item-comment__like-button
+        +like-button(opts)
+      p.item-comment__text.type-body= (opts.commentText)
+
+//- +item-comment({
+//-   title: 'Мурад Сарафанов', 
+//-   text: '5 дней назад', 
+//-   imgPath: require('../.../../assets/img/item-comment/image33.jpg'),
+//-   val: 5,
+//-   commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+//- })

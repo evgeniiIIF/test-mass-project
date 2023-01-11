@@ -1,0 +1,26 @@
+mixin expandable-checkbox-list(opts)
+  .expandable-checkbox-list.js-dropdown
+    .expandable-checkbox-list__field.dropdown__field.js-dropdown__button
+      .expandable-checkbox-list__title.type-h3= (opts.title)
+      .expandable-checkbox-list__arrow.dropdown__arrow
+          +svg(opts.arrowSvg)
+    .expandable-checkbox-list__menu.js-dropdown__menu
+      +checkbox-list(opts)
+
+
+//- +expandable-checkbox-list({
+//-   title: 'expandable checkbox list',
+//-   items:[
+//-     {text:'Завтрак', isChecked: false},
+//-     {text:'Письменный стол', isChecked: true},
+//-     {text:'Стул для кормления', isChecked: true},
+//-     {text:'Кроватка', isChecked: true},
+//-     {text:'Телевизор', isChecked: false},
+//-     {text:'Шампунь', isChecked: false},
+//-   ],
+//-   arrowSvg: {
+//-     id:'#expand-more',
+//-     width: 13,
+//-     height: 8,id: '#tick',
+//-   }
+//- })

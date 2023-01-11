@@ -1,0 +1,54 @@
+.pagination {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__list {
+    display: flex;
+    margin-bottom: 11px;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-50;
+    &--active {
+      font-weight: 700;
+      font-size: 12px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      color: $bg-color;
+    }
+  }
+  &__button-next {
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+    &::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      // background: url("../../../assets/img/arrow/arrow_forward.svg");
+    }
+  }
+  &__count-info {
+    margin-left: 20px;
+    color: $dark-75;
+  }
+}
+
+// mixin pagination(options)
+//   .pagination(id="pagination")
+//     if(options.title)
+//       .pagination__title= options.title
+//     ul.pagination__list
+//       li.pagination__item 1
+//       li.pagination__item 2
+//       li.pagination__item 3
+//       li.pagination__item ...
+//       li.pagination__button-next
+//     p.pagination__count-info 1 – 12 из 100+ вариантов аренды

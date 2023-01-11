@@ -1,0 +1,8 @@
+.logo {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+  & > *:not(:last-child) {
+    margin-right: 12px;
+  }
+}

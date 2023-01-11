@@ -1,0 +1,59 @@
+.toggle-buttons {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__body {
+  }
+}
+.toggle-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &__input:checked {
+    & ~ .toggle-button__pseudo-flag {
+      border-color: $primary-color;
+
+      &::after {
+        left: 100%;
+        transform: translate(calc(-100% - 4px), -50%);
+        background: $primary-color;
+      }
+    }
+  }
+  &__label {
+    cursor: pointer;
+    padding-left: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    color: $dark-75;
+  }
+  &__pseudo-flag {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 20px;
+    border: 1px solid $dark-25;
+    border-radius: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(4px, -50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $dark-25;
+    }
+  }
+}

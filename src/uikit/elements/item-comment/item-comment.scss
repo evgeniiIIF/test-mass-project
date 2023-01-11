@@ -1,0 +1,13 @@
+.item-comment {
+  &__person {
+    margin-bottom: 10px;
+  }
+  &__content {
+    display: flex;
+  }
+  &__like-button {
+    margin-right: 15px;
+  }
+  &__text {
+  }
+}

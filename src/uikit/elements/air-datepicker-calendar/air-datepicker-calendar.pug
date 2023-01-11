@@ -1,0 +1,29 @@
+mixin air-datepicker-calendar(opts)
+  .air-datepicker-calendar.js-air-datepicker-calendar.js-dropdown
+    .air-datepicker-calendar__dropdown-lists
+      .air-datepicker-calendar__dropdown.js-dropdown__button
+        +dropdown(opts.drop1)
+      if(opts.drop2)
+        .air-datepicker-calendar__dropdown.js-dropdown__button
+          +dropdown(opts.drop2)
+    .air-datepicker-calendar__menu.js-air-datepicker-calendar__menu.js-dropdown__menu
+
+
+//- +air-datepicker-calendar({
+//-   drop1:{
+//-     js: false, 
+//-     dropdownId: 'drop1',
+//-     label: 'date dropdown', 
+//-     type: 'text', 
+//-     placeholder: 'ДД.ММ.ГГГГ', 
+//-     tabindex: 1,
+//-   },
+//-   drop2: {
+//-     js: false, 
+//-     dropdownId: 'drop2',
+//-     label: 'date dropdown', 
+//-     type: 'text', 
+//-     placeholder: 'ДД.ММ.ГГГГ', 
+//-     tabindex: 1,
+//-   }
+//-     })

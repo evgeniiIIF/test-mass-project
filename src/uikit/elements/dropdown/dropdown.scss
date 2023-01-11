@@ -1,0 +1,71 @@
+.dropdown {
+  &__field {
+    position: relative;
+  }
+  &__input {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    padding-right: 40px;
+    background: transparent;
+    &:hover {
+      & ~ .dropdown__arrow {
+        opacity: 1;
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 100%;
+    opacity: 0.7;
+  }
+  &__menu {
+    border: 1px solid $dark-50;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    background: $bg-color;
+  }
+}
+.js-dropdown {
+  position: relative;
+}
+.js-dropdown__button {
+}
+.js-dropdown__menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  z-index: 2;
+}
+
+.dropdown--menu-open {
+  & .dropdown__input.field__input {
+    border-radius: 4px 4px 0 0;
+    border-color: $dark-50;
+  }
+  & .js-dropdown__menu {
+    display: block;
+  }
+  & .dropdown__arrow svg {
+    transform: rotate(180deg);
+  }
+}
+// mixin dropdown(opts)
+//   .dropdown.field.dropdown--menu-open
+//     if(opts.label)
+//       label.field__label.type-h3
+//         span.field__label-text=(opts.label)
+//         .dropdown__field
+//           input.field__input.type-body(type=(opts.type) placeholder=(opts.placeholder) tabindex=(opts.tabindex) required=(opts.required))
+//           span.dropdown__arrow
+//     else
+//       input.field__input.type-body(type=(opts.type) placeholder=(opts.placeholder) tabindex=(opts.tabindex) required=(opts.required))
+//       span.dropdown__arrow

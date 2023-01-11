@@ -1,0 +1,7 @@
+.checkbox-list {
+  padding: 16px 16px 16px 0;
+  @include mb(12px);
+  background: $bg-color;
+  &__item {
+  }
+}

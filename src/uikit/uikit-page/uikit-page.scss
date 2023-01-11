@@ -1,0 +1,17 @@
+@import "../../sys/scss/settings.scss";
+
+// styles
+.form-elements {
+  display: flex;
+  padding: 50px 10px;
+  column-gap: 30px;
+  min-height: 100%;
+
+  &__column {
+    @include mb(30px);
+    flex: 0 1 33.333%;
+  }
+}
+.page-blocks {
+  @include mb(30px);
+}

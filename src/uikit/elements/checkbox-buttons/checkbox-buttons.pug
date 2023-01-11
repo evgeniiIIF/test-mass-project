@@ -1,0 +1,17 @@
+mixin checkbox-buttons(opts)
+  .checkbox-buttons
+    .checkbox-buttons__title.type-h3= (opts.title)
+    .checkbox-buttons__menu
+      +checkbox-list(opts)
+
+//- +checkbox-buttons({
+//-   title: 'expandable checkbox list',
+//-   items:[
+//-     {text:'Завтрак', isChecked: false},
+//-     {text:'Письменный стол', isChecked: true},
+//-     {text:'Стул для кормления', isChecked: true},
+//-     {text:'Кроватка', isChecked: true},
+//-     {text:'Телевизор', isChecked: false},
+//-     {text:'Шампунь', isChecked: false},
+//-   ],
+//- })

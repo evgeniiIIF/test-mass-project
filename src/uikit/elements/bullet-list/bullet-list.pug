@@ -1,0 +1,15 @@
+mixin bullet-list(opts)
+  .bullet-list
+    .bullet-list__title.type-h3= opts.title
+    ul.bullet-list__list
+      each item in opts.items
+        li.bullet-list__item.type-body= item.text
+
+//- +bullet-list({
+//-     title: 'bullet list',
+//-     items: [
+//-       {text: 'Нельзя с питомцами'},
+//-       {text: 'Без вечеринок и мероприятий'},
+//-       {text: 'Время прибытия — после 13:00, а выезд до 12:00'},
+//-     ]
+//- })

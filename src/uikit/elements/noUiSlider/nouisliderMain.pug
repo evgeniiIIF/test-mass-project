@@ -1,0 +1,24 @@
+mixin range-slider(opts)
+  .range-slider
+    .range-slider__row
+      .range-slider__title= opts.title
+      .range-slider__values
+    .js-nouislider-plugin
+
+//- +range-slider({
+//-   title: "range"
+//- })
+
+mixin range-slider-one(opts)
+  .range-slider-one.js-range-slider-one
+    +field(opts)
+    .js-nouislider-plugin-one
+
+//- +field({
+//-   label: 'text field',
+//-   type: 'email',
+//-   name: 'text-field',
+//-   placeholder: 'Email',
+//-   tabindex: 1,
+//-   required: true,
+//- })

@@ -1,0 +1,22 @@
+mixin account-registration(opts)
+  form(action="#").account-registration.card
+    .card__item
+      h3.account-registration__title.type-h1= opts.title
+    .card__item
+      .card__group
+        +field(opts.fieldName)
+        +field(opts.fieldSurname)
+        +radio-buttons(opts.radioButtons)
+    .card__item
+      +masked-text-field(opts.maskedTextField)
+    .card__item
+      .card__group
+        +field(opts.fieldEmail)
+        +field(opts.fieldPassword)
+        +toggle-buttons(opts.toggleButton)
+    .card__item
+      +button-arrow(opts.buttonArrow)
+    .card__item
+      .card__space-between
+        p.card__account-actions-text.type-body Уже есть аккаунт на Toxin
+        +button-border-gradient(opts.buttonBorder)

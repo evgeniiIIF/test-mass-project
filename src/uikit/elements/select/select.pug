@@ -1,0 +1,25 @@
+mixin select(opts)
+  .select
+    +dropdown(opts)
+      each item in opts.selectItems
+        p.select__item.js-select__item= item
+
+//- +select({
+//-   js: true, 
+//-   readonly: true,
+//-   dropdownId: 'select1',
+//-   name: 'Вид топлива',
+//-   label: 'select', 
+//-   type: 'text', 
+//-   placeholder: 'Ваш выбор', 
+//-   tabindex: 1,
+//-   arrowSvg: {
+//-     id:'#expand-more',
+//-     width: 13,
+//-     height: 8,
+//-   },
+//-   selectItems:[
+//-     'дт',
+//-     'аи-95'
+//-   ]
+//- })

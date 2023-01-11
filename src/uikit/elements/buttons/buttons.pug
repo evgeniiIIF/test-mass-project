@@ -1,0 +1,48 @@
+mixin button-color(opts)
+  button(type='button').button-color
+    if(opts.text)
+      span.button-color__text= (opts.text)
+    else
+      +it(opts.it)
+
+mixin button-border-gradient(opts)
+  button(type='button').button-border-gradient
+    .button-border__text= (opts.text)
+
+mixin button-arrow(opts)
+  a(href="./search-room.html").button-arrow
+    .button-arrow__text= (opts.text)
+    .button-arrow__arrow 
+      <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z" fill="#BC9CFF"/></svg>
+
+//- ===============================
+
+//- +button-color({
+//-   it:{
+//-     svg: {
+//-       name: 'expand-more',
+//-       fill: '#1F2041',
+//-       opacity: '0.5'
+//-     },
+//-     imr: '30px',
+//-     text: 'it'
+//-   }
+//- })
+
+//- or
+
+//- +button-color({
+//-   text: 'color',
+//- })
+
+//- ===============================
+
+//- +button-border-gradient({
+//-   text: 'color',
+//- })
+
+//- ===============================
+
+//- +button-arrow({
+//-   text: 'color',
+//- })

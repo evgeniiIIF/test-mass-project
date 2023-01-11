@@ -1,0 +1,17 @@
+.select {
+  &__item {
+    text-transform: uppercase;
+    padding: 14px 15px;
+    @extend %type-signature;
+    cursor: pointer;
+    &:not(:last-child) {
+      border-bottom: 1px solid $dark-50;
+    }
+    &:hover {
+      background: $dark-5;
+    }
+  }
+  & .field__input {
+    text-transform: uppercase;
+  }
+}

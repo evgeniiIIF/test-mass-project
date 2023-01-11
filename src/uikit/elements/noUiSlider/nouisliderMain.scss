@@ -1,0 +1,59 @@
+.noUi-horizontal {
+  height: 1px;
+}
+.noUi-target {
+  border: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  top: -50%;
+  transform: translateY(-50%);
+}
+.noUi-connects {
+  background: $dark-25;
+}
+.noUi-connect {
+  background: #098fcf;
+}
+
+.noUi-handle {
+  border-radius: 50%;
+  background: #098fcf;
+  box-shadow: none;
+  cursor: default;
+}
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+
+.range-slider {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__values {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-50;
+  }
+}
+
+.range-slider-one {
+  position: relative;
+  & .js-nouislider-plugin-one {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  & .field__input {
+    border-radius: 4px 4px 0 0;
+  }
+}

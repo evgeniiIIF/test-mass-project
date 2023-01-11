@@ -1,0 +1,116 @@
+include ../../uikit/elements/elements-page/elements-page.pug
+include ../../uikit/tables/tables-page/tables-page.pug
+//- include ../../uikit/cards/cards-page/cards-page.pug
+
+
+
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{title}
+		meta(name="description", content=description)
+		block head
+	body(class=pageClass)
+		include ../../sys/img/svg-sptites/svg-sptites.svg
+		.wrapper
+			+header({
+				logo: {
+					href: '#',
+					logoIcon: require("../../assets/img/logo/logo.png"),
+				},
+				menuItems: [
+					{text: 'Доставка топлива', href: "http://processing", submenuItems: false},
+					
+					{text: 'Топливные карты', href: "http://processing24", submenuItems: [
+						{text: 'submenuItem', href: "http://1", submenuItems: false},
+						
+						{text: 'submenuItem', href: "http://2", submenuItems: [
+							{text: 'submenuItem', href: "http://1", submenuItems: false},
+							{text: 'submenuItem', href: "http://2", submenuItems: false},
+							{text: 'submenuItem', href: "http://3", submenuItems: false},
+						]},
+
+						{text: 'submenuItem', href: "http://3", submenuItems: false},
+					]},
+					{text: 'АЗС', href: "http://АЗС", submenuItems: [
+						{text: 'submenuItem', href: "http://1", submenuItems: false},
+						{text: 'submenuItem', href: "http://2", submenuItems: false},
+						{text: 'submenuItem', href: "http://3", submenuItems: false},
+					]},
+					{text: 'Цены на топливо', href: "http://processing24", submenuItems: false},
+					{text: 'О компании', href: "http://processing24", submenuItems: [
+						{text: 'submenuItem', href: "http://1", submenuItems: false},
+						{text: 'submenuItem', href: "http://2", submenuItems: false},
+						{text: 'submenuItem', href: "http://3", submenuItems: false},
+					]},
+					{text: 'Контакты', href: "http://processing24", submenuItems: false},
+				],
+			})
+			block content
+			+footer({
+				logo:{
+					href: 'https://changeme',
+					logoIcon: require("../../assets/img/logo/logo.png"),
+				},
+				blockLogoText: 'Заполните заявку на сайте, укажите удобное для вас место приезда заправщика, сорт и количество топлива, которое хотите купить',
+				navItems:[
+					{
+						title: "навигация", 
+						links: [
+							{href: 'http://chagneme', text: 'О нас'},
+							{href: 'http://chagneme', text: 'Новости'},
+							{href: 'http://chagneme', text: 'Служба поддержки'},
+							{href: 'http://chagneme', text: 'Услуги'},
+						]
+					},
+					{
+						title: "о нас", 
+						links: [
+							{href: 'http://chagneme', text: 'О сервисе'},
+							{href: 'http://chagneme', text: 'Наша команда'},
+							{href: 'http://chagneme', text: 'Вакансии'},
+							{href: 'http://chagneme', text: 'Инвесторы'},
+						]
+					},
+					{
+						title: "Служба поддержки", 
+						links: [
+							{href: 'http://chagneme', text: 'Соглашения'},
+							{href: 'http://chagneme', text: 'Сообщества'},
+							{href: 'http://chagneme', text: 'Связь с нами'},
+						]
+					}
+				],
+				subscribe: {
+					title: 'Подписка',
+					text: 'Получайте специальные предложения и новости сервиса',
+					field: {
+						js: false, 
+						dropdownId: false,
+						label: false, 
+						type: 'email', 
+						placeholder: 'Email', 
+						tabindex: 1,
+						arrowSvg: {
+							name: 'arrow-forward', 
+							fill: "#BC9CFF",
+							opacity: null,
+						}
+					}
+				},
+				copy:{
+					text: 'Copyright © 2018 Toxin отель. Все права защищены.',
+					icons:[
+						{src: require('../../assets/img/social/facebook.svg'), alt: 'facebook'},
+						{src: require('../../assets/img/social/instagramm.svg'), alt: 'instagramm'},
+						{src: require('../../assets/img/social/twiter.svg'), alt: 'twiter'},
+					]
+				}
+			})
+			
+		block scripts

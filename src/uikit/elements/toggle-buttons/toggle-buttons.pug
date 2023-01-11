@@ -1,0 +1,14 @@
+mixin toggle-buttons(options)
+  .toggle-buttons
+    if(options.title)
+      .toggle-buttons__title.type-h3= (options.title)
+    .toggle-buttons__body
+      .toggle-button
+        label.toggle-button__label= (options.text)
+          input.toggle-button__input(type="checkbox")
+          span.toggle-button__pseudo-flag
+
+//- +toggle-buttons({
+//-   title: 'Toggle', 
+//-   text: 'Получать спецпредложения'
+//-   })

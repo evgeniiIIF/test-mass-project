@@ -1,0 +1,91 @@
+mixin footer(opts)
+  footer.footer
+    .footer__container.container
+      .footer__row
+        .footer__block-logo.block-logo
+          .block-logo__icon
+            +logo(opts)
+          p.block-logo__text.type-body= (opts.blockLogoText)
+        nav.footer__nav.nav-footer
+          each navItem in opts.navItems
+            .nav-footer__item
+              h3.nav-footer__title.type-h3= navItem.title
+              ul.nav-footer__list.nav-footer-list
+                each navListLink in navItem.links
+                  li.nav-footer-list__item
+                    a(href=navListLink.href).nav-footer-list__link.type-body= navListLink.text
+        .footer__subscribe.subscribe-footer
+          h3.subscribe-footer__title.type-h3= (opts.subscribe.title)
+          p.subscribe-footer__text.type-body= (opts.subscribe.text)
+          .subscribe-footer__field
+            +subscription-text-field(opts.subscribe.field)
+      .footer__copy.copy
+        .copy__row
+          .copy__logo
+            +logo(opts)
+          p.copy__text.type-body= (opts.copy.text)
+          .copy__social.social
+            each copyIcon in opts.copy.icons
+              img(src=(copyIcon.src), alt=(copyIcon.alt)).social__icon
+
+  //- +footer({
+  //-   logo:{
+  //-     href: 'https://changeme',
+  //-     logoIcon: require("../.../../assets/img/icons/favicon.png"),
+  //-     logoText: require("../.../../assets/img/icons/TOXIN.png"),
+  //-   },
+  //-   blockLogoText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+  //-   navItems:[
+  //-     {
+  //-       title: "навигация", 
+  //-       links: [
+  //-         {href: 'http://chagneme', text: 'О нас'},
+  //-         {href: 'http://chagneme', text: 'Новости'},
+  //-         {href: 'http://chagneme', text: 'Служба поддержки'},
+  //-         {href: 'http://chagneme', text: 'Услуги'},
+  //-       ]
+  //-     },
+  //-     {
+  //-       title: "о нас", 
+  //-       links: [
+  //-         {href: 'http://chagneme', text: 'О сервисе'},
+  //-         {href: 'http://chagneme', text: 'Наша команда'},
+  //-         {href: 'http://chagneme', text: 'Вакансии'},
+  //-         {href: 'http://chagneme', text: 'Инвесторы'},
+  //-       ]
+  //-     },
+  //-     {
+  //-       title: "Служба поддержки", 
+  //-       links: [
+  //-         {href: 'http://chagneme', text: 'Соглашения'},
+  //-         {href: 'http://chagneme', text: 'Сообщества'},
+  //-         {href: 'http://chagneme', text: 'Связь с нами'},
+  //-       ]
+  //-     }
+  //-   ],
+  //-   subscribe: {
+  //-     title: 'Подписка',
+  //-     text: 'Получайте специальные предложения и новости сервиса',
+  //-     field: {
+  //-       js: false, 
+  //-       dropdownId: false,
+  //-       label: false, 
+  //-       type: 'email', 
+  //-       placeholder: 'Email', 
+  //-       tabindex: 1,
+  //-       arrowSvg: {
+  //-         name: 'arrow-forward', 
+  //-         fill: "#BC9CFF",
+  //-         opacity: null,
+  //-       }
+  //-     }
+  //-   },
+  //-   copy:{
+  //-     text: 'Copyright © 2018 Toxin отель. Все права защищены.',
+  //-     icons:[
+  //-       {src: require('../.../../assets/img/social/facebook.svg'), alt: 'facebook'},
+  //-       {src: require('../.../../assets/img/social/instagramm.svg'), alt: 'instagramm'},
+  //-       {src: require('../.../../assets/img/social/twiter.svg'), alt: 'twiter'},
+  //-     ]
+  //-   }
+  //- })

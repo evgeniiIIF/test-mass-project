@@ -1,0 +1,12 @@
+mixin like-button(opts)
+  .like-button
+    if(opts.likeTitle)
+      .like-button__title.type-h3= (opts.likeTitle)
+    .like-button__body
+      .like-button__image
+      input(type="text" value=(opts.val) disabled).like-button__value 
+
+//- +like-button({
+//-   likeTitle: 'like button',
+//-   val: 5
+//- })

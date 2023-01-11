@@ -1,0 +1,63 @@
+.iq-dropdown {
+  padding: 7px 7px 15px 15px;
+  @include mb(20px);
+
+  &__items {
+    @include mb(7px);
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
+    color: $primary-color;
+    cursor: pointer;
+    &--disabled {
+      opacity: 0;
+      cursor: default;
+    }
+  }
+}
+.iq-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__quantity-control {
+  }
+  &__quantity-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $dark-25;
+    border-radius: 50%;
+    color: $dark-50;
+    &--disabled {
+      opacity: 0.25;
+    }
+  }
+
+  &__count {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: 32px;
+  }
+}
+
+// mixin item-quantity-dropdown(opts)
+//   +dropdown(opts)
+//     .iq-dropdown
+//       each item in opts.items
+//         .iq-dropdown-item(data-id= (item.id))
+//               p.iq-dropdown-item__text= (item.text)
+//               .iq-dropdown-item__quantity-control
+//                 button.iq-dropdown-item__quantity-button(data-action='decrement-button') -
+//                 span.iq-dropdown-item__count= (opts.itemCount)
+//                 button.iq-dropdown-item__quantity-button(data-action='increment-button') +
+//       if(opts.buttons)
+//         .iq-dropdown__buttons
+//           .iq-dropdown__button-clear очистить
+//           .iq-dropdown__button-apply применить

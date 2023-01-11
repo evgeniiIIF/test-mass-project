@@ -1,0 +1,17 @@
+.item-info-row {
+  display: flex;
+
+  &__image {
+    margin-right: 15px;
+  }
+  &__content {
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 171%;
+    color: $dark-75;
+  }
+  &__text {
+  }
+}

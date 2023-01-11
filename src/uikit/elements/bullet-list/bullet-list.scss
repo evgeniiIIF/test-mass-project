@@ -1,0 +1,27 @@
+.bullet-list {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__list {
+    @include mb(10px);
+  }
+  &__item {
+    display: flex;
+    &::before {
+      content: "";
+      display: block;
+      flex: 0 0 10px;
+      height: 10px;
+      margin-right: 10px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: $dark-25;
+    }
+  }
+}
+// mixin bullet-list(options)
+//   .bullet-list
+//     .bullet-list__title= options.title
+//     ul.bullet-list__list
+//       each item in options.items
+//         li.bullet-list__item= item.text

@@ -1,0 +1,20 @@
+mixin radio-buttons(options)
+  .radio-buttons
+    if(options.title)
+      .radio-buttons__title.type-h3= (options.title)
+    .radio-buttons__body
+      .radio-button
+        label.radio-button__label= (options.radio__1)
+          input.radio-button__input(type="radio", name=options.name checked)
+          span.radio-button__pseudo-flag
+      .radio-button
+        label.radio-button__label= (options.radio__2)
+          input.radio-button__input(type="radio", name=options.name  )
+          span.radio-button__pseudo-flag
+
+//- +radio-buttons({
+//-   title: 'Radio Buttons',
+//-   radio__1: 'Мужчина', 
+//-   radio__2: 'Женщина', 
+//-   name: 'radio'
+//-   })

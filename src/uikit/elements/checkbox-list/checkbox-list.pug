@@ -1,0 +1,18 @@
+mixin checkbox-list(opts)
+  ul.checkbox-list
+    each item in opts.items
+      li.checkbox-list__item
+        +item-checkbox(item)
+
+
+
+//- +checkbox-list({
+//-   items:[
+//-     {text:'Завтрак', isChecked: false},
+//-     {text:'Письменный стол', isChecked: true},
+//-     {text:'Стул для кормления', isChecked: true},
+//-     {text:'Кроватка', isChecked: true},
+//-     {text:'Телевизор', isChecked: false},
+//-     {text:'Шампунь', isChecked: false},
+//-   ]
+//- })

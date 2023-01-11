@@ -1,0 +1,29 @@
+function f(min, max, step) {
+  let arr = []
+  let arr2 = []
+  let ind;
+  let stepArr;
+  
+  while(min <= max) {
+    arr.push(min)
+    min += step
+  }
+  
+  if(arr.length >= 10) {
+    arr2.push(min)
+    stepArr = Math.floor(arr.length/10)
+    ind = stepArr
+    while(ind < arr.length) {
+      arr2.push(arr[ind])
+      ind += stepArr
+    }
+    console.log(arr2)
+    
+  } else {
+    console.log(arr)
+
+  }
+  }
+
+f(0, 1000, 50)
+

@@ -1,0 +1,40 @@
+mixin items-colors(colors)
+  each value,key in colors
+    .item-color
+      if (key.startsWith('Dark'))
+        - const per = parseInt(key.replace('Dark Shade', ''))
+        .item-color__view(class=`dark-${per}`)
+      else 
+        .item-color__view(class=key.toLowerCase())
+      .item-color__text
+        h6.item-color__name=key
+        p.item-color__code=value
+
+mixin items-types(types)
+  each value,key in types
+    .item-type
+      h1.item-type__name(class=`item-type__name--${key.toLowerCase()}`)=key
+      p.item-type__view(class=`type-${key.toLowerCase()}`)=value
+
+
+.colors-and-type 
+  include ../head/head.pug
+  .container
+    .colors-and-type__body
+      .colors
+        +items-colors({
+          'Dark Shade 100%':'#1F2041',
+          'Dark Shade 75%':'#1F2041',
+          'Dark Shade 50%':'#1F2041',
+          'Dark Shade 25%':'#1F2041',
+          'Dark Shade 5%':'#1F2041',
+          'Purple':'#BC9CFF',
+          'Green':'#6FCF97',
+        })
+      .types
+        +items-types({
+          H1:'This one is the sub-section or widget title',
+          H2:'Next one is the item title inside widgets',
+          H3:'This is a label or CTA text',
+          Body:'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
+        })

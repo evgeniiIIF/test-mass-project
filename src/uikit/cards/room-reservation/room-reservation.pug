@@ -1,0 +1,35 @@
+mixin room-reservation(opts)
+  form(action="#").card.room-reservation
+    .card__item.card__space-between.room-info
+      h3.room-info__number
+        span.room-info__number-numbers= ('№ ' + opts.number + ' ')
+        span.room-info__number-characteristic.type-h3= (opts.characteristic)
+      .room-info__price
+        span.room-info__price-worth= (opts.worth + '₽ ')
+        span.room-info__price-text в сутки
+    .card__item
+      +air-datepicker-calendar(opts)
+    .card__item
+      +item-quantity-dropdown(opts.iqDropdown)
+    .card__item
+      table.room-reservation__table
+        tbody
+          tr
+            td.room-reservation__table-title <span>9 990₽ х 4 суток</span>
+            td.room-reservation__table-icon
+            td.room-reservation__table-worth <span>39 960₽</span>
+          tr
+            td.room-reservation__table-title Сбор за услуги: скидка <span>2 179₽</span>
+            td.room-reservation__table-icon
+              .room-reservation__table-icon-true i
+            td.room-reservation__table-worth <span>0₽</span>
+          tr
+            td.room-reservation__table-title Сбор за дополнительные услуги
+            td.room-reservation__table-icon
+              .room-reservation__table-icon-true i
+            td.room-reservation__table-worth <span>300₽</span>
+    .room-reservation__total-costs.card__item.card__space-between.type-h2
+      span.room-reservation__total-costs-text Итого
+      span.room-reservation__total-costs-numbers 38 081₽
+    .card__item
+      +button-arrow(opts.buttonArrow)

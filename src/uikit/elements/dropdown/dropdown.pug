@@ -1,0 +1,50 @@
+mixin dropdown(opts)
+  .dropdown.field(class= (opts.js ? 'js-dropdown' : ''))
+    +content(opts)
+      block
+
+mixin content(opts)
+  - 
+    var attributes = {
+      'data-id': (opts.dropdownId),
+      name: (opts.name),
+      readonly: (opts.readonly),
+      type: (opts.type),
+      placeholder: (opts.placeholder),
+      tabindex: (opts.tabindex),
+      required: (opts.required),
+    }
+    
+  if(opts.label)
+    .dropdown__label.field__label
+      h3.dropdown__label-text.field__label-text=(opts.label)
+      .dropdown__field
+        input.dropdown__input.field__input(class= (opts.js ? 'js-dropdown__button' : ''))&attributes(attributes)
+        .dropdown__arrow
+          +svg(opts.arrowSvg)
+  else
+    .dropdown__field
+      input.dropdown__input.field__input(class= (opts.js ? 'js-dropdown__button' : '') )&attributes(attributes)
+      .dropdown__arrow
+        +svg(opts.arrowSvg)
+  if(opts.js)
+    .dropdown__menu(class= (opts.js ? 'js-dropdown__menu' : ''))
+      block
+
+//- +dropdown({
+//-   js: true, 
+//-   readonly: true,
+//-   dropdownId: 'drop1',
+//-   label: 'dropdown', 
+//-   type: 'text', 
+//-   placeholder: 'Сколько гостей', 
+//-   tabindex: 1,
+//-   arrowSvg: {
+//-     id:'#expand-more',
+//-     width: 13,
+//-     height: 8,
+//-   }
+//- })
+//-   p content menu-item
+//-   p content menu-item
+//-   p content menu-item

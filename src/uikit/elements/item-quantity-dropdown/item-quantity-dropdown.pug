@@ -1,0 +1,15 @@
+mixin item-quantity-dropdown(opts)
+  +dropdown(opts)
+    .iq-dropdown(data-id=(opts.id))
+      .iq-dropdown__items
+        each item in opts.items
+          .iq-dropdown-item(data-id= (item.id))
+                p.iq-dropdown-item__text.type-h3= (item.text)
+                .iq-dropdown-item__quantity-control
+                  button.iq-dropdown-item__quantity-button(type='button' data-action='decrement-button') -
+                  span.iq-dropdown-item__count.type-h3= (item.itemCount)
+                  button.iq-dropdown-item__quantity-button(type='button' data-action='increment-button') +          
+      if(opts.buttons)
+        .iq-dropdown__buttons
+          .iq-dropdown__button.type-h3( data-name='clear') очистить
+          .iq-dropdown__button.type-h3( data-name='apply') применить

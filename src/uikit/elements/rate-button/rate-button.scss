@@ -1,0 +1,13 @@
+.rate-button {
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__row {
+    display: flex;
+    @include mr(5px);
+  }
+  &__star {
+  }
+  &__star-border {
+  }
+}

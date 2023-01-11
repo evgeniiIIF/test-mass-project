@@ -1,0 +1,13 @@
+mixin pagination(opts)
+  .pagination
+    if(opts.title)
+      .pagination__title.type-h3= opts.title
+    ul.pagination__list
+      li.pagination__item.pagination__item--active 1
+      li.pagination__item 2
+      li.pagination__item 3
+      li.pagination__item ...
+      li.pagination__item 15
+      li.pagination__item.pagination__button-next.type-body
+    p.pagination__count-info 1 – 12 из 100+ вариантов аренды
+

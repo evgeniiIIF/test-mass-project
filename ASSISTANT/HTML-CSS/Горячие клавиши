@@ -1,0 +1,92 @@
+Браузер
+    Сtrl + U                - посмотреть код страницы в браузер
+
+VisualStudio Code
+    Shift + Alt + F на и Ctrl + Shift + I на Linux - Чтобы отформатировать код
+    
+    End, Home                                           - начало конец строки
+    Сtrl + /                                            - закоментировать строку
+    Shift+Alt+W                                         - обернуть выделенный текст в тег
+
+    General
+Ctrl+Shift+P, F1 Show Command Palette                   - Показать палитру команд
+Ctrl+P Quick Open, Go to File…                          - Быстрое открытие, переход к файлу…
+Ctrl+Shift+N New window/instance                        - Новое окно / экземпляр
+Ctrl+Shift+W Close window/instance                      - Закрыть окно / экземпляр
+Ctrl+, User Settings                                    - Пользовательские настройки
+Ctrl+K Ctrl+S Keyboard Shortcuts                        - Горячие клавиши
+
+   Basic editing                                        - Базовое редактирование
+Ctrl+X Cut line (empty selection)                       - вырезать строку
+Ctrl+C Copy line (empty selection)                      - копировать строку
+Alt+ ↑ / ↓ Move line up/down                            - Переместить строку вверх / вниз
+Shift+Alt + ↓ / ↑ Copy line up/down                     - копировать строку вверх / вниз
+Ctrl+Shift+K Delete line                                - удалить строку целиком
+Ctrl+Enter Insert line below                            - Вставить пустую строку ниже
+Ctrl+Shift+Enter Insert line above                      - Вставить пустую строку выше
+Ctrl+Shift+\ Jump to matching bracket                   - Перейти к соответствующей скобке
+Ctrl+] / [ Indent/outdent line                          - строка с отступом выступом
+Home / End Go to beginning/end of line                  - начало / конец строки
+Ctrl+Home Go to beginning of file                       - Перейти к началу файла
+Ctrl+End Go to end of file                              - Перейти к концу файла
+Ctrl+↑ / ↓ Scroll line up/down                          - Прокрутка строки вверх вниз
+Alt+PgUp / PgDn Scroll page up/down                     - Прокрутка страницы вверх / вниз
+Ctrl+Shift+[ Fold (collapse) region                     - Свернуть (свернуть) область
+Ctrl+Shift+] Unfold (uncollapse) region                 - развернуть область
+Ctrl+K Ctrl+[ Fold (collapse) all subregions            - Свернуть (свернуть) все подобласти
+Ctrl+K Ctrl+] Unfold (uncollapse) all subregions        - развернуть все подобласти
+Ctrl+K Ctrl+0 Fold (collapse) all regions               - 
+Ctrl+K Ctrl+J Unfold (uncollapse) all regions
+Ctrl+K Ctrl+C Add line comment                          - добавить комментарий к строке
+Ctrl+K Ctrl+U Remove line comment
+Ctrl+/ Toggle line comment                              - закоментировать строку
+Shift+Alt+A Toggle block comment                        - вызов тега коментарий
+Alt+Z Toggle word wrap                                  - включить перенос слов (если текст длинный)
+
+    Navigation
+Ctrl+T Show all Symbols                                 - Показать все символы
+Ctrl+G Go to Line...                                    - перейти к строке 10 итд
+Ctrl+P Go to File...                                    - перейти к файлу
+Ctrl+Shift+O Go to Symbol...                            - Перейти к символу.
+Ctrl+Shift+M Show Problems panel                        - Показать панель проблем
+F8 Go to next error or warning                          - Перейти к следующей ошибке или предупреждению
+Shift+F8 Go to previous error or warning                - Перейти к предыдущей ошибке или предупреждению
+Ctrl+Shift+Tab Navigate editor group history            - Навигация по истории группы редакторов
+Alt+ ← / → Go back / forward                            - Назад / вперед
+Ctrl+M Toggle Tab moves focus                           - переключает таб на окна проги
+
+    Search and replace
+Ctrl+F Find                                             - поиск
+Ctrl+H Replace                                          - замена
+F3 / Shift+F3 Find next/previous
+Alt+Enter Select all occurences of Find match           - выбрать все найдение для редактирования
+Ctrl+D Add selection to next Find match                 - Добавить выделение к следующему совпадению
+Ctrl+K Ctrl+D Move last selection to next Find match
+Alt+C / R / W Toggle case-sensitive / regex / whole word    - Переключить чувствительность к регистру / регулярное выражение / целое слово
+
+    Multi-cursor and selection                                  - Мульти-курсор и ВЫДЕЛЕНИЕ
+--------------------------------------------------------------------------------------------------------------------------
+Alt+Click Insert cursor                                         - Вставить курсор (печатать в нескольких местах)
+
+                                                                  // На XFCE перейдите в Applications -> Settings -> 
+                                                                  Settings editor - > xfwm4 -> easy_click(disable value) 
+                                                                  (в редактор настроек)//
+--------------------------------------------------------------------------------------------------------------------------
+
+Ctrl+Alt+ ↑ / ↓ Insert cursor above / below                     - Вставить курсор выше / ниже
+Ctrl+U Undo last cursor operation                               - Отменить последнюю операцию курсора
+Shift+Alt+I Insert cursor at end of each line selected          - Вставить курсор в конец каждой выделенной строки
+Ctrl+L Select current line                                      - Выбрать текущую строку
+Ctrl+Shift+L Select all occurrences of current selection        - Выбрать все вхождения текущего выделения
+Ctrl+F2 Select all occurrences of current word                  - Выбрать все вхождения текущего слова
+Shift+Alt+→ Expand selection                                    - Расширить выбор
+Shift+Alt+← Shrink selection
+Shift+Alt +                                                     - выделить столбцом
+(drag mouse)
+Column (box) selection
+Ctrl+Shift+Alt                                                  - выделить столбец стрелками
++ (arrow key)
+Column (box) selection
+Ctrl+Shift+Alt
++PgUp/PgDn
+Column (box) selection page up/down
