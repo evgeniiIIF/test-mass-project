@@ -45,16 +45,19 @@ html(lang="en")
 									.center-menu__text КиноПоиск
 									img.center-menu__icon(src=require("../../assets/img/logo/logo.png"), alt="logo")
 								p.center-menu__content ОНИ ДОЛЖНЫ ЧТО-ТО ЗНАТЬ
-							.center-menu__slider
-								+images-slider([
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-									require('../../assets/img/racer.png'),
-								])
+							.center-menu__middle
+								.center-menu__slider
+									+images-slider([
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+										require('../../assets/img/racer.png'),
+									])
+								button.center-menu__button Искать промокод
+									img(src=require("../../assets/img/arrow-btn.svg"), alt="")
 						.block__menu-right.right-menu
 							a.right-menu__link(href="") hd.kinopoisk.ru

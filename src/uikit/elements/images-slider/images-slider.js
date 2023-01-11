@@ -86,6 +86,11 @@
       let to = pagination.querySelector(".pagination-slider__to");
       from.innerText = currentSlideIndex + 1 + "/";
       to.innerText = allProgressItems.length;
+      if (currentSlideIndex == 0) {
+        btnPrev.style.opacity = 0;
+      } else {
+        btnPrev.style.opacity = 1;
+      }
     }
   }
 
